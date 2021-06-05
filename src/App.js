@@ -37,7 +37,13 @@ function App() {
 
  const strikeUnstrike = (todo) => {
             todo.completed = !todo.completed
-
+            setTodotasks(
+              todotasks.filter((e) => {
+                return  todo;
+              })
+            );
+            localStorage.setItem("todo", JSON.stringify(todotasks));
+            
             console.log("TASK:", todo.completed);
   };
 
